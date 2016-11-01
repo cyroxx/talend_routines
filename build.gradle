@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.6
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.bouncycastle:bcprov-jdk15on:1.54'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+    }
+
+    test {
+        java {
+            srcDirs = ['src_test']
+        }
+    }
+}
+
+eclipse.project {
+    natures 'org.eclipse.buildship.core.gradleprojectnature'
+}
